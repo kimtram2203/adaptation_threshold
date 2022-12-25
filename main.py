@@ -3,7 +3,7 @@ import numpy as np
 
 from matplotlib import pyplot as plt
 
-imageData = ['anh1.jpg', 'anh2.jpg', 'anh3.png', 'anh4.jpg', 'anh5.png', 'anh6.jpg']
+imageData = ['anh1.jpg', 'anh2.jpg', 'anh3.png', 'anh4.jpg', 'anh6.jpg']
 images = []
 titles = ['Mean Thresholding', 'Gaussian Thresholding']
 
@@ -20,10 +20,12 @@ def image_partitioning(file_name):
 def run_data():
     for i in range(len(imageData)):
         image_partitioning(imageData[i])
-    print(len(images))
     for j in range(len(images)):
-        plt.subplot(len(images) // 2, 2, j + 1), plt.imshow(images[j], 'gray')
+        plt.subplot(1, 1, 1), plt.imshow(images[j], 'gray')
+        plt.title(titles[j % 2], fontdict={'fontsize':13})
+        plt.subplots_adjust(hspace=0.5)
+        # plt.xlabel(titles[j % 2], fontsize=10)
         plt.xticks([]), plt.yticks([])
+        plt.show()
 
-                
 run_data()
