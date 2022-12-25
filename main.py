@@ -21,11 +21,12 @@ def run_data():
     for i in range(len(imageData)):
         image_partitioning(imageData[i])
     for j in range(len(images)):
-        plt.subplot(1, 1, 1), plt.imshow(images[j], 'gray')
+        plt.subplot(len(images) // 2, 2, j + 1), plt.imshow(images[j], 'gray')
         plt.title(titles[j % 2], fontdict={'fontsize':13})
         plt.subplots_adjust(hspace=0.5)
         # plt.xlabel(titles[j % 2], fontsize=10)
         plt.xticks([]), plt.yticks([])
-        plt.show()
+    plt.show()
+
 
 run_data()
