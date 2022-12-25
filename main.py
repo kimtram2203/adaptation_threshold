@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 
 def image_partitioning(fileName):
-    img = cv.imread('./venv/assets/' + fileName + '.jpeg', 0)
+    img = cv.imread('./assets/' + fileName, 0)
     img = cv.medianBlur(img, 5)
     ret, th1 = cv.threshold(img, 127, 255, cv.THRESH_BINARY)
     th2 = cv.adaptiveThreshold(img, 255, cv.ADAPTIVE_THRESH_MEAN_C, \
@@ -21,5 +21,4 @@ def image_partitioning(fileName):
     plt.show()
 
 
-for i in range(3):
-    image_partitioning("anh" + str(i + 1))
+image_partitioning('anh3.jpg')
