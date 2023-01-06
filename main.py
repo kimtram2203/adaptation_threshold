@@ -32,8 +32,7 @@ def image_partitioning(file_name):
     thresh_mean.append(image_thresh_mean)
 
     ## chuyển đổi ảnh xám theo phương pháp Adaptive Threshold Gaussion, đưa ảnh này vào tập thresh_gaussion
-    image_thresh_gaussion = cv.adaptiveThreshold(image_grey, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 11,
-                                                 2)
+    image_thresh_gaussion = cv.adaptiveThreshold(image_grey, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 11, 2)
     thresh_gaussian.append(image_thresh_gaussion)
 
 
@@ -49,6 +48,8 @@ def show_images(dataset: [], title):
         plt.title(imageName[i], fontdict={'fontsize': 12})
         ## điều chỉnh khoảng cách giữa các ảnh (chiều cao)
         plt.subplots_adjust(hspace=0.25)
+        ## clear phần viền tọa độ của khung ảnh
+        plt.xticks([]), plt.yticks([])
 
     ## thêm title hiển thị cho tập ảnh
     plt.suptitle(title)
