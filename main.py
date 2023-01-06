@@ -1,6 +1,4 @@
 import cv2 as cv
-import numpy as np
-
 from matplotlib import pyplot as plt
 
 imageData = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg',
