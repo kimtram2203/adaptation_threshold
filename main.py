@@ -21,21 +21,22 @@ def image_partitioning(file_name):
     thresh_gaussian.append(th3)
 
 
-def show_images(dataset: []):
+def show_images(dataset: [], title):
     for i in range(len(dataset)):
         plt.subplot(2, len(dataset) // 2, i + 1), plt.imshow(dataset[i], 'gray')
         plt.title(imageName[i], fontdict={'fontsize': 12})
         plt.subplots_adjust(hspace=0.25)
         plt.xticks([]), plt.yticks([])
+    plt.suptitle(title)
     plt.show()
 
 
 def run_data():
     for i in range(len(imageData)):
         image_partitioning(imageData[i])
-    show_images(origin)
-    show_images(thresh_mean)
-    show_images(thresh_gaussian)
+    show_images(origin, title='Origin Image')
+    show_images(thresh_mean, title='Adaptive Thresholding Mean')
+    show_images(thresh_gaussian, title='Adaptive Thresholding Gaussion')
 
 
 run_data()
